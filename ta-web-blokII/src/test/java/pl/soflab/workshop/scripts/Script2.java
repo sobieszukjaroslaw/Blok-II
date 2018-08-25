@@ -25,4 +25,20 @@ public class Script2 extends BaseTest {
 		String expected = "My account - My Store";
 		Assert.assertEquals("Registration passed",expected, actual);
 	}
+	@Test
+	public void authorizationUserFailed() {
+		MainPage mainPage = new MainPage(driver);
+		mainPage.clickSignIn();
+		
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.fillLoginEmail("1111@sof.pl");
+		loginPage.fillPassword("blasdlasd");
+		loginPage.clickLogin();
+		
+		MyAccount myAccount = new MyAccount(driver);
+		String actual = myAccount.getTitle();
+		String expected = "My account - My Store";
+		Assert.assertTrue("Autoryzacja zakończona niepowodzeniem", expected.equals(actual));
+
+	}
 }
