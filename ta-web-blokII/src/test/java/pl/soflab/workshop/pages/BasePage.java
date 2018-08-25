@@ -14,7 +14,7 @@ public class BasePage {
 	protected String randomText = RandomStringUtils.randomAlphabetic(8); //losowy ciąg 8 znaków
 	protected String randomThreeString = RandomStringUtils.randomAlphabetic(3); //losowy ciąg 3 znaków	
 	protected String randomZipCode = RandomStringUtils.randomNumeric(5); //losowy adres pocztowy
-	protected String randomMobilePhone = RandomStringUtils.randomNumeric(9); // losowy numer
+	protected String randomMobilePhone = RandomStringUtils.randomNumeric(9); // losowy numer telefonu
 	protected WebDriverWait wait;
 	protected Actions action;
 	protected WebElement element;
