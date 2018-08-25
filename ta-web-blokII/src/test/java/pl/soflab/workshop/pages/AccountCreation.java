@@ -30,43 +30,36 @@ public class AccountCreation extends BasePage {
 	}
 	
 	public void selectGender() {
-		wait = new WebDriverWait(driver,10); 
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weradioButton));
+		waitForElement(weradioButton);
 		click(element);
 	}
 	public void fillName() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weFirstName));
+		waitForElement(weFirstName);
 		setTextField(element, randomText);
 	}
 	public void fillLastName() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weLastName));
+		waitForElement(weLastName);
 		setTextField(element, randomText);
 	}
 	public void fillPassword() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(wePassword));
+		waitForElement(wePassword);
 		setTextField(element, randomText);
 	}
 	public void setDayOfBirth(String day) {
-		wait = new WebDriverWait(driver, 10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weDateOfBirth));
+		waitForElement(weDateOfBirth);
 		//navigateToElement(element);
 		click(element);
 		selectElement(weDateOfBirth,day);
 		click(weDateOfBirth);
 	}
 	public void setMonthOfBirth(String month) {
-		wait = new WebDriverWait(driver, 10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weMonthOfBirth));
+		waitForElement(weMonthOfBirth);
 		click(element);
 		selectElement(weMonthOfBirth, month);
 		click(weMonthOfBirth);
 	}
 	public void setYearOfBirth(String year) {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weYearOfBirth));
+		waitForElement(weYearOfBirth);
 		click(element);
 		selectElement(weYearOfBirth, year);
 		click(weYearOfBirth);
@@ -79,41 +72,34 @@ public class AccountCreation extends BasePage {
 	}
 	
 	public void fillCompany() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weCompany));
+		waitForElement(weCompany);
 		setTextField(element, randomText);
 	}
 	
 	public void fillCity() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weCity));
+		waitForElement(weCity);
 		setTextField(element, randomText);
 	}
 	public void fillAdress() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weAdress));
+		waitForElement(weAdress);
 		setTextField(element, randomText);
 	}
 	public void setState(String state) {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weState));
+		waitForElement(weState);
 		click(element);
 		selectElement(weState, state);
 		click(weState);
 	}
 	public void fillZipCode() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weZipCode));
+		waitForElement(weZipCode);
 		setTextField(element, randomZipCode);
 	}
 	public void fillMobilePhone() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weMobilePhone));
+		waitForElement(weMobilePhone);
 		setTextField(element, randomMobilePhone);
 	}
 	public void fillAlias() {
-		wait = new WebDriverWait(driver,10);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weAlias));
+		waitForElement(weAlias);
 		element.clear();
 		setTextField(element, randomText);
 	}
