@@ -26,7 +26,7 @@ public class BasePage {
 		driver.findElement(location).click();
 		
 	}
-	protected void click(WebElement weElement) {
+	protected void click(WebElement weElement) { 
 		weElement.click();
 	}
 	protected void setTextField(By location, String value) {
@@ -35,8 +35,8 @@ public class BasePage {
 	protected void setTextField(WebElement weElement, String value) {
 		weElement.sendKeys(value);
 	}
-	protected void waitForElement(By location) {
-		wait = new WebDriverWait(driver,10);
+	protected void waitForElement(By location) {  //metoda do oczekiwania aż element na stronie zostanie wczytany
+		wait = new WebDriverWait(driver,10); 
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(location));
 	}
 	protected void navigateToElement(WebElement location) {

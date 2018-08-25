@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
 	public void setEmailAdress() {
 		setTextField(emailCreate,randEmail );
 	}
-	public AccountCreation clickBtnCreationAccount() {
+	public AccountCreation clickBtnCreationAccount() { 
 		click(btnCreateAccount);
 		return new AccountCreation(driver);
 	}

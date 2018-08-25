@@ -10,7 +10,7 @@ import pl.soflab.workshop.pages.MyAccount;
 
 public class Script2 extends BaseTest {
 	
-	@Test
+	@Test //test sprawdzający poprawność logowania użytkownika który istnieje
 	public void authorizationUser() {
 		MainPage mainPage = new MainPage(driver);
 		mainPage.clickSignIn();
@@ -25,7 +25,7 @@ public class Script2 extends BaseTest {
 		String expected = "My account - My Store";
 		Assert.assertEquals("Registration passed",expected, actual);
 	}
-	@Test
+	@Test  //test sprawdzający próbę logowania z niepoprawnymi danymi
 	public void authorizationUserFailed() {
 		MainPage mainPage = new MainPage(driver);
 		mainPage.clickSignIn();
