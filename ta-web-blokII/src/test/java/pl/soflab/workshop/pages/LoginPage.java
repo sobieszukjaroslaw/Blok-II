@@ -8,6 +8,9 @@ public class LoginPage extends BasePage {
 	private By emailCreate = By.xpath("//input[@data-validate='isEmail' and @id='email_create']");
 	private By btnCreateAccount = By.xpath("//i[@class='icon-user left']");
 	private final String randEmail = randomText + "@" + randomThreeString + "." + randomThreeString; // losowy email 
+	private By weEmailLogin = By.id("email");
+	private By wePassword = By.id("passwd");
+	private By weSignIn = By.xpath("//i[@class='icon-lock left']");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
@@ -18,6 +21,15 @@ public class LoginPage extends BasePage {
 		click(btnCreateAccount);
 		return new AccountCreation(driver);
 	}
-	
+	public void fillLoginEmail(String login) {
+		setTextField(weEmailLogin, login);
+	}
+	public void fillPassword(String password) {
+		setTextField(wePassword, password);
+	}
+	public MyAccount clickLogin() {
+		click(weSignIn);
+		return new MyAccount(driver);
+	}
 
 }
