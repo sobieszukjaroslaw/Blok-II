@@ -1,9 +1,6 @@
 package pl.soflab.workshop.pages;
 
-import java.util.Random;
-
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +12,8 @@ public class BasePage {
 	protected WebDriver driver;
 	protected String randomText = RandomStringUtils.randomAlphabetic(8);
 	protected String randomThreeString = RandomStringUtils.randomAlphabetic(3);
-	//protected RandomUtils rand = new RandomUtils().nextInt(0,10);
+	protected String randomZipCode = RandomStringUtils.randomNumeric(5);
+	protected String randomMobilePhone = RandomStringUtils.randomNumeric(9);
 	protected WebDriverWait wait;
 	protected Actions action;
 	protected WebElement element;

@@ -18,6 +18,12 @@ public class AccountCreation extends BasePage {
 	private By weCheckboxSpecialOffers = By.id("optin");
 	private By weCity = By.id("city");
 	private By weCompany = By.id("company");
+	private By weAdress = By.id("address1");
+	private By weState = By.id("id_state");
+	private By weZipCode = By.id("postcode");
+	private By weAlias = By.id("alias");
+	private By weMobilePhone = By.id("phone_mobile");
+	private By weBtnRegister = By.xpath("//span[text()= 'Register']");
 	
 	public AccountCreation(WebDriver driver) {
 		super(driver);
@@ -84,7 +90,35 @@ public class AccountCreation extends BasePage {
 		setTextField(element, randomText);
 	}
 	public void fillAdress() {
-		
+		wait = new WebDriverWait(driver,10);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weAdress));
+		setTextField(element, randomText);
 	}
-
+	public void setState(String state) {
+		wait = new WebDriverWait(driver,10);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weState));
+		click(element);
+		selectElement(weState, state);
+		click(weState);
+	}
+	public void fillZipCode() {
+		wait = new WebDriverWait(driver,10);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weZipCode));
+		setTextField(element, randomZipCode);
+	}
+	public void fillMobilePhone() {
+		wait = new WebDriverWait(driver,10);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weMobilePhone));
+		setTextField(element, randomMobilePhone);
+	}
+	public void fillAlias() {
+		wait = new WebDriverWait(driver,10);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(weAlias));
+		element.clear();
+		setTextField(element, randomText);
+	}
+	public MyAccount clickBtbRegister() {
+		click(weBtnRegister);
+		return new MyAccount(driver);
+	}
 }

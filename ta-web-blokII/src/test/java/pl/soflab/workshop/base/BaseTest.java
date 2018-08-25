@@ -20,10 +20,10 @@ public class BaseTest {
 		driver = new ChromeDriver(); //utworzenie obiektu przeglądarki chrome
 		driver.manage().window().maximize();  // maksymalizacja okna przeglądarki przed każdym testem
 	}
-	/*@After
+	@After
 	public void TearDown() {
 		if (driver!= null)     // jeżeli przeglądarka jest uruchumiona zamykamy ją po zakończeniu każdego testu
 			driver.quit();
-	}*/
+	}
 
 }

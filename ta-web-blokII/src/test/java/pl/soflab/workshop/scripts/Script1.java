@@ -1,11 +1,13 @@
 package pl.soflab.workshop.scripts;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import pl.soflab.workshop.base.BaseTest;
 import pl.soflab.workshop.pages.AccountCreation;
 import pl.soflab.workshop.pages.LoginPage;
 import pl.soflab.workshop.pages.MainPage;
+import pl.soflab.workshop.pages.MyAccount;
 
 public class Script1 extends BaseTest{
 	
@@ -30,5 +32,16 @@ public class Script1 extends BaseTest{
 		accountCreation.clickCheckboxSpecialOffers();
 		accountCreation.fillCompany();
 		accountCreation.fillCity();
+		accountCreation.fillAdress();
+		accountCreation.setState("Texas");
+		accountCreation.fillZipCode();
+		accountCreation.fillMobilePhone();
+		accountCreation.fillAlias();
+		accountCreation.clickBtbRegister();
+		
+		MyAccount myAccount = new MyAccount(driver);
+		String actual = myAccount.getTitle();
+		String expected = "My account - My Store";
+		Assert.assertEquals("Registration passed",expected, actual);
 	}
 }
