@@ -11,6 +11,7 @@ public class LoginPage extends BasePage {
 	private By wePassword = By.id("passwd");
 	private By weSignIn = By.xpath("//i[@class='icon-lock left']");
 	protected final String randEmail = randomText + "@" + randomThreeString + "." + randomThreeString; // losowy email 
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}

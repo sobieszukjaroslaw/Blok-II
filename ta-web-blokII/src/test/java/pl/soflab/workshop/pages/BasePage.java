@@ -14,7 +14,7 @@ public class BasePage {
 	protected String randomText = RandomStringUtils.randomAlphabetic(8); //losowy ciąg 8 znaków
 	protected String randomThreeString = RandomStringUtils.randomAlphabetic(3); //losowy ciąg 3 znaków	
 	protected String randomZipCode = RandomStringUtils.randomNumeric(5); //losowy adres pocztowy
-	protected String randomMobilePhone = RandomStringUtils.randomNumeric(9); // losowy numer telefonu
+	protected String randomMobilePhone = RandomStringUtils.randomNumeric(9); // losowy numer
 	protected WebDriverWait wait;
 	protected Actions action;
 	protected WebElement element;
@@ -38,6 +38,14 @@ public class BasePage {
 	protected void waitForElement(By location) {  //metoda do oczekiwania aż element na stronie zostanie wczytany
 		wait = new WebDriverWait(driver,10); 
 		element = wait.until(ExpectedConditions.presenceOfElementLocated(location));
+	}
+	protected void waitForElementClicable(By location) {  //metoda do oczekiwania aż element na stronie zostanie wczytany i możliwy do kliknięcia
+		wait = new WebDriverWait(driver,10); 
+		element = wait.until(ExpectedConditions.elementToBeClickable(location));
+	}
+	protected void waitForElementVisibility(By location) {  //metoda do oczekiwania aż element na stronie zostanie wczytany i możliwy do kliknięcia
+		wait = new WebDriverWait(driver,10); 
+		element = wait.until(ExpectedConditions.visibilityOfElementLocated(location));
 	}
 	protected void navigateToElement(WebElement location) {
 		action = new Actions(driver);

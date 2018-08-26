@@ -24,6 +24,6 @@ public class BaseTest {
 	public void TearDown() {
 		if (driver!= null)     // jeżeli przeglądarka jest uruchumiona zamykamy ją po zakończeniu każdego testu
 			driver.quit();
-	}
+	} 
 
 }
